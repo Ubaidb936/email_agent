@@ -1,6 +1,7 @@
 # email_agent
 
-`email_prompt = """
+```python
+email_prompt = """
   You are an email writer. Use the following input to draft an email:
   Input: {input}
   Deliver:
@@ -28,4 +29,5 @@ def get_email(user_input) -> dict:
    parser = email_parser
    prompt = email_prompt.format(input=user_input)
    intent_chain = email_model | parser
-   return intent_chain.invoke({'prompt': prompt, 'parser':parser})`
+   return intent_chain.invoke({'prompt': prompt, 'parser':parser})
+```
